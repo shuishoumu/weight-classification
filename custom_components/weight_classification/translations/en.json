@@ -20,7 +20,8 @@
             }
         },
         "error": {
-            "invalid_weight_range": "Maximum weight must be greater than minimum weight"
+            "invalid_weight_range": "Maximum weight must be greater than minimum weight",
+            "no_persons": "You must add at least one person"
         },
         "abort": {
             "already_configured": "This integration is already configured"

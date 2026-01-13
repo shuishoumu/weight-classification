@@ -20,7 +20,8 @@
             }
         },
         "error": {
-            "invalid_weight_range": "最大体重必须大于最小体重"
+            "invalid_weight_range": "最大体重必须大于最小体重",
+            "no_persons": "必须至少添加一个成员"
         },
         "abort": {
             "already_configured": "该集成已经配置"

@@ -94,14 +94,18 @@ class WeightClassificationConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 if user_input.get("add_another", False):
                     return await self.async_step_persons()
 
-                # Create the config entry
-                return self.async_create_entry(
-                    title="Weight Classification",
-                    data={
-                        CONF_SOURCE_SENSOR: self._source_sensor,
-                        CONF_PERSONS: self._persons,
-                    },
-                )
+                # Validate at least one person is configured
+                if not self._persons:
+                    errors["base"] = "no_persons"
+                else:
+                    # Create the config entry
+                    return self.async_create_entry(
+                        title="Weight Classification",
+                        data={
+                            CONF_SOURCE_SENSOR: self._source_sensor,
+                            CONF_PERSONS: self._persons,
+                        },
+                    )
 
         data_schema = vol.Schema(
             {
@@ -127,36 +131,4 @@ class WeightClassificationConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             description_placeholders=description_placeholders,
         )
 
-    @staticmethod
-    @callback
-    def async_get_options_flow(
-        config_entry: config_entries.ConfigEntry,
-    ) -> config_entries.OptionsFlow:
-        """Get the options flow for this handler."""
-        return OptionsFlowHandler(config_entry)
 
-
-class OptionsFlowHandler(config_entries.OptionsFlow):
-    """Handle options flow for Weight Classification."""
-
-    def __init__(self, config_entry: config_entries.ConfigEntry) -> None:
-        """Initialize options flow."""
-        self.config_entry = config_entry
-
-    async def async_step_init(
-        self, user_input: dict[str, Any] | None = None
-    ) -> config_entries.FlowResult:
-        """Manage the options."""
-        return await self.async_step_user()
-
-    async def async_step_user(
-        self, user_input: dict[str, Any] | None = None
-    ) -> config_entries.FlowResult:
-        """Handle options step."""
-        if user_input is not None:
-            return self.async_create_entry(title="", data=user_input)
-
-        return self.async_show_form(
-            step_id="user",
-            data_schema=vol.Schema({}),
-        )
