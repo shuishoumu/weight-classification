@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Home Assistant
+*.log
+
+# Git
+.git/
+
+# GitHub setup guide (optional, remove if you want to keep it)
+GITHUB_SETUP_GUIDE.md

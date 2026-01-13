@@ -1,0 +1,29 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Weight Classification Setup",
+                "description": "Select the source weight sensor from your scale",
+                "data": {
+                    "source_sensor": "Source Weight Sensor"
+                }
+            },
+            "persons": {
+                "title": "Add Family Members",
+                "description": "Configure weight ranges for each family member. {persons_count} person(s) added so far.",
+                "data": {
+                    "name": "Person Name",
+                    "min_weight": "Minimum Weight (kg)",
+                    "max_weight": "Maximum Weight (kg)",
+                    "add_another": "Add another person"
+                }
+            }
+        },
+        "error": {
+            "invalid_weight_range": "Maximum weight must be greater than minimum weight"
+        },
+        "abort": {
+            "already_configured": "This integration is already configured"
+        }
+    }
+}

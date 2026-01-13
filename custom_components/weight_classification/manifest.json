@@ -1,0 +1,11 @@
+{
+  "domain": "weight_classification",
+  "name": "Weight Classification",
+  "codeowners": ["@shuis"],
+  "config_flow": true,
+  "documentation": "https://github.com/shuis/weight-classification",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/shuis/weight-classification/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

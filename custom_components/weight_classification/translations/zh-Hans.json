@@ -1,0 +1,29 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "体重分类设置",
+                "description": "选择您的体脂秤的源体重传感器",
+                "data": {
+                    "source_sensor": "源体重传感器"
+                }
+            },
+            "persons": {
+                "title": "添加家庭成员",
+                "description": "为每个家庭成员配置体重范围。目前已添加 {persons_count} 人。",
+                "data": {
+                    "name": "姓名",
+                    "min_weight": "最小体重 (千克)",
+                    "max_weight": "最大体重 (千克)",
+                    "add_another": "添加其他成员"
+                }
+            }
+        },
+        "error": {
+            "invalid_weight_range": "最大体重必须大于最小体重"
+        },
+        "abort": {
+            "already_configured": "该集成已经配置"
+        }
+    }
+}
